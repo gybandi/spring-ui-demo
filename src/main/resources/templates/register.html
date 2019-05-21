@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<table>
+   <th:block th:each="user : ${allUsers}">
+      <tr>
+         <td th:text="${user.id}">...</td>
+         <td th:text="${user.utype}">...</td>
+      </tr>
+   </th:block>
+</table>
+
+<form action="#" th:action="@{/registerUser}" th:object="${user}" method="post" >
+<h1 th:text="*{utype}"></h1>
+  <select th:field="*{utype}" >
+      <option th:each="usertype : ${UserTypes}"
+             th:text="${usertype.type}"
+     th:value="utype">
+    </option>
+</select>
+</form>
+</body>
+</html>
