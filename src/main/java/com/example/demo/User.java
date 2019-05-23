@@ -14,6 +14,8 @@ public class User {
 	@GeneratedValue
 	private Long id;
 
+	private String name;
+
 	@Enumerated(EnumType.STRING)
 	@Column(name = "user_type", nullable = false)
 	private UserType utype;
@@ -26,14 +28,20 @@ public class User {
 		this.id = id;
 	}
 
-	@Enumerated(EnumType.STRING)
 	public UserType getUtype() {
-
 		return utype;
 	}
 
-	@Enumerated(EnumType.STRING)
 	public void setUtype(UserType utype) {
 		this.utype = utype;
 	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 }

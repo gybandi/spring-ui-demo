@@ -13,17 +13,11 @@ public class InitializerService {
 
 	@PostConstruct
 	public void init() {
-		User user = new User();
-		user.setUtype(UserType.SUPPLIER);
-		userRepository.save(user);
 
 		User user2 = new User();
 		user2.setUtype(UserType.ADMIN);
+		user2.setName("Admin Bob");
 		userRepository.save(user2);
-
-		User user3 = new User();
-		user3.setUtype(UserType.CLIENT);
-		userRepository.save(user3);
 	}
 
 }
